@@ -1,0 +1,39 @@
+[1mdiff --git a/blog/models.py b/blog/models.py[m
+[1mindex 3cc7ff8..a5b4a5b 100644[m
+[1m--- a/blog/models.py[m
+[1m+++ b/blog/models.py[m
+[36m@@ -5,7 +5,7 @@[m [mfrom django.contrib.auth.models import User[m
+ [m
+ [m
+ class PublishedManager(models.Manager):[m
+[31m-    def get_queryset(self) -> models.QuerySet:[m
+[32m+[m[32m    def get_queryset(self):[m
+         return super().get_queryset().filter(status=Post.Status.PUBLISHED)[m
+          [m
+ [m
+[36m@@ -14,7 +14,7 @@[m [mclass PublishedManager(models.Manager):[m
+ class Post(models.Model):[m
+     class Status(models.TextChoices):[m
+         DRAFT = 'DF', 'Draft'[m
+[31m-        PUBLISHED = 'PB', 'Punlished'[m
+[32m+[m[32m        PUBLISHED = 'PB', 'Published'[m
+ [m
+ [m
+ [m
+[36m@@ -30,7 +30,7 @@[m [mclass Post(models.Model):[m
+                               default=Status.DRAFT)[m
+ [m
+ objects = models.Manager()[m
+[31m-published = PublishedManager()[m
+[32m+[m[32mPublished = PublishedManager()[m
+ [m
+ class Meta:[m
+         ordering = ['-publish'][m
+[36m@@ -39,6 +39,6 @@[m [mclass Meta:[m
+         ][m
+ [m
+ [m
+[31m-def __str__(self) -> str:[m
+[32m+[m[32mdef __str__(self):[m
+         return self.title[m
+ [m
