@@ -11,8 +11,8 @@ def post_list(request):
     #               {"posts":posts})
 
     return render(request,
-                  "blog/base.html",
-                  {"post":posts})
+                  "blog/posts/list.html",
+                  {"posts":posts})
 
 def post_details(request, id):
     post = get_object_or_404(Post,
