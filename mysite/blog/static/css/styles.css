@@ -1,17 +1,86 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
+}
+a{
+    color: #00abff;
+    text-decoration: none;
+}
+h1{
+    font-weight: normal;
+    border-bottom:1px solid #bbb;
+    padding: 0 0 10px 0;
+
+}
+h2{
+    font-weight: normal;
+    margin: 30px 0 0;
 }
 
-#container {
-    width: 80%;
-    margin: 0 auto;
+#content {
+    float: left;
+    width: 60%;
+    padding: 0 0 0 30px;
 }
 
 #sidebar {
     float: right;
-    width: 20%;
-    background-color: #f4f4f4;
+    width: 30%;
     padding: 10px;
-    box-sizing: border-box;
+    background: #f4f4f4;
+    height: 100px;
+}
+p.date{
+    color: #ccc;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    
+}
+
+.pagination {
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+label{
+    float: left;
+    clear: both;
+    color: #333;
+    margin-bottom: 4px;
+}
+input, textarea{
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: #ededed;
+    border: 0;
+    padding: 6px 10 px;
+    font-size: 12px;
+}
+input{
+    font-weight: bold;
+    background: #00abff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.errorlist{
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding: left 10px; ;
+}
+.comment{
+    padding: 10px;
+}
+.comment:nth-child(even){
+    background: #efefef;
+}
+.comment .info{
+    font-weight: bold;
+    font-size: 12px;
+    color: #656;
 }
