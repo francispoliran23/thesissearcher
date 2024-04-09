@@ -20,3 +20,4 @@ def post_details(request, year, month, day, post):
     return render(request,
                   "blog/posts/detail.html",
                   {"post":post})
+
