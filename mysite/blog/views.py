@@ -1,14 +1,15 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
+from django.core.paginator import Paginator
 from .models import Post
 
 
 
 def post_list(request):
-    posts = Post.Published.all()
-    # return render(request,     
-    #               "blog/post/list.html",
-    #               {"posts":posts})
+    post_list = Post.Published.all()
+    paginator = Paginator(post_list, 3)
+    page_number = request.GET.get('page', 1)
+    posts = paginator.page(page_number)
 
     return render(request,
                   "blog/posts/list.html",
